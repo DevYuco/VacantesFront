@@ -1,26 +1,23 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { ILogin } from '../interfaces/ilogin';
-import { Observable } from 'rxjs';
-import { ILoginResponse } from '../interfaces/ilogin-response';
+import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+import { ILogin } from "../interfaces/ilogin";
+import { Observable } from "rxjs";
+import { ILoginResponse } from "../interfaces/ilogin-response";
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: "root",
 })
 export class AuthService {
-  httpCliente = inject(HttpClient);
+	httpCliente = inject(HttpClient);
 
-  private baseUrl: string = 'http://localhost:9005';
+	private baseUrl: string = "http://apivacantes.matabuena.com";
 
-  constructor() {}
+	constructor() {}
 
-  login(user: ILogin): Observable<ILoginResponse> {
-    return this.httpCliente.post<ILoginResponse>(
-      this.baseUrl + '/auth/login',
-      user
-    );
-  }
-  registro(data: any): Observable<any> {
-    return this.httpCliente.post('http://localhost:9005/auth/registro', data);
-  }
+	login(user: ILogin): Observable<ILoginResponse> {
+		return this.httpCliente.post<ILoginResponse>(this.baseUrl + "/auth/login", user);
+	}
+	registro(data: any): Observable<any> {
+		return this.httpCliente.post(this.baseUrl + "/auth/registro", data);
+	}
 }
