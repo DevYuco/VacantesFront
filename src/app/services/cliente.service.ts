@@ -3,6 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { ICardVacante } from "../interfaces/icard-vacante";
 import { ISolicitudes } from "../interfaces/isolicitudes";
+import { IUsuarioDetalle } from "../interfaces/iusuario-detalle";
 
 @Injectable({
 	providedIn: "root",
@@ -16,6 +17,11 @@ export class ClienteService {
 	getAll(): Observable<ICardVacante[]> {
 		return this.httpCliente.get<ICardVacante[]>(this.baseUrl + "/api/usuario/verVacanteCreada");
 	}
+
+	getAllUsuarios(): Observable<IUsuarioDetalle[]> {
+		return this.httpCliente.get<IUsuarioDetalle[]>(this.baseUrl + "/api/admin/verUsuarios");
+	}
+
 	getById(idVavante: string): Observable<ICardVacante> {
 		return this.httpCliente.get<ICardVacante>(this.baseUrl + "/api/usuario/vacantes/" + idVavante);
 	}
