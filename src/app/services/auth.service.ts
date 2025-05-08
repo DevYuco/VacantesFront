@@ -10,7 +10,7 @@ import { ILoginResponse } from "../interfaces/ilogin-response";
 export class AuthService {
 	httpCliente = inject(HttpClient);
 
-	private baseUrl: string = "http://apivacantes.matabuena.com";
+	private baseUrl: string = "https://apireto.matabuena.com";
 
 	constructor() {}
 

@@ -15,7 +15,7 @@ import { IEmpresaModificar } from "../interfaces/iempresa-modificar";
 export class EmpresaService {
 	httpCliente = inject(HttpClient);
 
-	private baseUrl: string = "http://apivacantes.matabuena.com/api/empresa";
+	private baseUrl: string = "https://apireto.matabuena.com/api/empresa";
 
 	constructor() {}
 

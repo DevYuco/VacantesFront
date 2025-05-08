@@ -11,7 +11,7 @@ import { IUsuarioDetalle } from "../interfaces/iusuario-detalle";
 export class ClienteService {
 	httpCliente = inject(HttpClient);
 
-	private baseUrl: string = "http://apivacantes.matabuena.com";
+	private baseUrl: string = "https://apireto.matabuena.com";
 	constructor() {}
 
 	getAll(): Observable<ICardVacante[]> {
